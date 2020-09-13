@@ -9,11 +9,12 @@ class StringQuestion extends Component {
     this.validationManager = new StringValidationManager(
       this.props.question.answerValidationsSpecifications
     )
-    this.state = {
-      explanations: [],
-      isValid: this.props.initialValue !== null,
-      currentAnswer: this.props.initialValue,
-    }
+  }
+
+  state = {
+    explanations: [],
+    isValid: this.props.initialValue !== null,
+    currentAnswer: this.props.initialValue,
   }
 
   render() {

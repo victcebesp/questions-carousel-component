@@ -10,14 +10,14 @@ class DropDownQuestion extends Component {
     this.validationManager = new DropDownValidationManager(
       this.props.question.answerValidationsSpecifications
     )
+  }
 
-    this.state = {
-      explanations: [],
-      isValid: true,
-      currentAnswer: this.props.initialValue
-        ? this.props.initialValue
-        : this.props.options[0],
-    }
+  state = {
+    explanations: [],
+    isValid: true,
+    currentAnswer: this.props.initialValue
+      ? this.props.initialValue
+      : this.props.options[0],
   }
 
   render() {

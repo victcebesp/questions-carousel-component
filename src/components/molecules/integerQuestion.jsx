@@ -10,12 +10,12 @@ class IntegerQuestion extends Component {
     this.validationManager = new IntegerValidationManager(
       this.props.question.answerValidationsSpecifications
     )
+  }
 
-    this.state = {
-      explanations: [],
-      isValid: this.props.initialValue !== null,
-      currentAnswer: this.props.initialValue,
-    }
+  state = {
+    explanations: [],
+    isValid: this.props.initialValue !== null,
+    currentAnswer: this.props.initialValue,
   }
 
   render() {
