@@ -90,6 +90,7 @@ class QuestionsCarousel extends Component {
         (q) => q.id === nextQuestionId
       )
       if (
+        !askingConditions ||
         askingConditions.length === 0 ||
         this.itSatisfiesAllAskingConditions(askingConditions, answer)
       )
