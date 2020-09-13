@@ -117,13 +117,6 @@ class QuestionsCarousel extends Component {
     }
     return true
   }
-
-  getDoneButton = () => {
-    if (
-      this.state.currentQuestionId === this.state.questionsConfigurations.length
-    )
-      return <button className="btn btn-success btn-lg">Done!</button>
-  }
 }
 
 export default QuestionsCarousel
