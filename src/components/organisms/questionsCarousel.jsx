@@ -1,14 +1,11 @@
 import React, { Component } from "react"
-import questionsConfigurations from "../../data/questionsConfigurations"
-import userData from "../../data/userData"
+
 import IntegerQuestion from "../molecules/integerQuestion"
 import StringQuestion from "../molecules/stringQuestion"
 import DropDownQuestion from "../molecules/dropDownQuestion"
 
 class QuestionsCarousel extends Component {
   state = {
-    questionsConfigurations: questionsConfigurations,
-    userData: userData,
     currentQuestionId: 0,
     answers: [],
   }
@@ -19,17 +16,17 @@ class QuestionsCarousel extends Component {
 
   getComponentToShow = () => {
     if (
-      this.state.currentQuestionId === this.state.questionsConfigurations.length
+      this.state.currentQuestionId === this.props.questionsConfigurations.length
     )
       return <button className="btn btn-success btn-lg">Done!</button>
     else return this.getCurrentQuestion()
   }
 
   getCurrentQuestion = () => {
-    const currentQuestion = this.state.questionsConfigurations.find(
+    const currentQuestion = this.props.questionsConfigurations.find(
       (q) => q.id === this.state.currentQuestionId
     )
-    const userDataForCurrentQuestion = this.state.userData.find(
+    const userDataForCurrentQuestion = this.props.userData.find(
       (d) => d.questionId === currentQuestion.id
     )
     const initialValue = userDataForCurrentQuestion
@@ -87,7 +84,7 @@ class QuestionsCarousel extends Component {
 
   getNextQuestionId = (answer) => {
     let nextQuestionId = this.state.currentQuestionId + 1
-    const { questionsConfigurations } = this.state
+    const { questionsConfigurations } = this.props
     while (nextQuestionId < questionsConfigurations.length) {
       let { askingConditions } = questionsConfigurations.find(
         (q) => q.id === nextQuestionId
