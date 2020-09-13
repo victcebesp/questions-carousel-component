@@ -20,7 +20,7 @@ class StringQuestion extends Component {
   render() {
     return (
       <div
-        tabIndex={this.props.tabIndex}
+        tabIndex="0"
         onBlur={() =>
           this.state.isValid &&
           this.props.onBlur(this.props.question.id, this.state.currentAnswer)

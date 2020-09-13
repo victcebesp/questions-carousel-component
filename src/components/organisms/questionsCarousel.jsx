@@ -46,7 +46,6 @@ class QuestionsCarousel extends Component {
           key={question.id}
           question={question}
           initialValue={initialValue}
-          tabIndex={question.id}
           onBlur={this.handleBlur}
         />
       )
@@ -56,7 +55,6 @@ class QuestionsCarousel extends Component {
           key={question.id}
           question={question}
           initialValue={initialValue}
-          tabIndex={question.id}
           onBlur={this.handleBlur}
         />
       )
@@ -66,7 +64,6 @@ class QuestionsCarousel extends Component {
           key={question.id}
           question={question}
           initialValue={initialValue}
-          tabIndex={question.id}
           onBlur={this.handleBlur}
         />
       )
