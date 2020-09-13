@@ -7,14 +7,12 @@ import userData from "./data/userData"
 
 function App() {
   return (
-    <React.Fragment>
-      <main className="container">
-        <QuestionsCarousel
-          questionsConfigurations={questionsConfigurations}
-          userData={userData}
-        />
-      </main>
-    </React.Fragment>
+    <main className="container">
+      <QuestionsCarousel
+        questionsConfigurations={questionsConfigurations}
+        userData={userData}
+      />
+    </main>
   )
 }
 
