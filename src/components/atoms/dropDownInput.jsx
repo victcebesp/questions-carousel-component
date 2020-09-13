@@ -15,10 +15,8 @@ class DropDownInput extends Component {
   }
 
   getDefaultValue = () => {
-    if (this.props.initialValue) {
-      return this.props.initialValue
-    }
-    return this.props.options[0]
+    const { initialValue } = this.props
+    return initialValue ? initialValue : this.props.options[0]
   }
 
   getOptions = () => {
