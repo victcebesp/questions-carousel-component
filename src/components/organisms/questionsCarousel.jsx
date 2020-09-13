@@ -90,13 +90,14 @@ class QuestionsCarousel extends Component {
 
   getNextQuestionId = (answer) => {
     let nextQuestionId = this.state.currentQuestionId + 1
-    while (nextQuestionId < this.state.questionsConfigurations.length) {
-      let { conditions } = this.state.questionsConfigurations.find(
+    const { questionsConfigurations } = this.state
+    while (nextQuestionId < questionsConfigurations.length) {
+      let { askingConditions } = questionsConfigurations.find(
         (q) => q.id === nextQuestionId
       )
       if (
-        conditions.length === 0 ||
-        this.itSatisfiesAllConditions(conditions, answer)
+        askingConditions.length === 0 ||
+        this.itSatisfiesAllAskingConditions(askingConditions, answer)
       )
         return nextQuestionId
       else nextQuestionId++
@@ -104,16 +105,15 @@ class QuestionsCarousel extends Component {
     return nextQuestionId
   }
 
-  itSatisfiesAllConditions = (conditions, answer) => {
+  itSatisfiesAllAskingConditions = (askingConditions, answer) => {
     let answers = [...this.state.answers]
     answers.push(answer)
-    for (let i in conditions) {
-      let condition = conditions[i]
-      if (
-        condition.answer !==
-        answers.find((a) => a.questionId === condition.question).answer
+    for (let i in askingConditions) {
+      let condition = askingConditions[i]
+      const answerForContition = answers.find(
+        (a) => a.questionId === condition.question
       )
-        return false
+      if (condition.answer !== answerForContition.answer) return false
     }
     return true
   }
