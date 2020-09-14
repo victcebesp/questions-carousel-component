@@ -9,7 +9,10 @@ function App() {
   return (
     <main className="container">
       <div id="header">
-        <img src={require("./images/logo.png")} alt="Multiply logo" />
+        <img
+          src={require("./assets/images/multiplyLogo.png")}
+          alt="Multiply logo"
+        />
         <h1>coding test</h1>
       </div>
       <QuestionsCarousel
