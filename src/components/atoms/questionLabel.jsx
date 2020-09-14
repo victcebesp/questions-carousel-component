@@ -1,9 +1,7 @@
 import React, { Component } from "react"
 
-class QuestionLabel extends Component {
-  render() {
-    return <h2>{this.props.text}</h2>
-  }
+const QuestionLabel = (props) => {
+  return <h2>{props.text}</h2>
 }
 
 export default QuestionLabel
