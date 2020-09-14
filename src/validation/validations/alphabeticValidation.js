@@ -1,5 +1,5 @@
 export default class AlphabeticValidation {
-  validate = (answer) => answer.match("^[a-zA-Z]+$")
+  validate = (answer) => /^[a-zA-Z]+$/.test(answer)
 
   getExplanation = () => `The answer can only have alphabetic characters.`
 }
