@@ -8,6 +8,7 @@ class DropDownInput extends Component {
         className="custom-select"
         onChange={(event) => this.props.onChange(event.target.value)}
         defaultValue={this.getDefaultValue()}
+        onBlur={this.props.onBlur}
       >
         {this.getOptions()}
       </select>

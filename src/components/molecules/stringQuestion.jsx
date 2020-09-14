@@ -19,18 +19,15 @@ class StringQuestion extends Component {
 
   render() {
     return (
-      <div
-        className="question"
-        tabIndex="0"
-        onBlur={() =>
-          this.state.isValid &&
-          this.props.onBlur(this.props.question.id, this.state.currentAnswer)
-        }
-      >
+      <div className="question">
         <QuestionLabel text={this.props.question.questionLabel} />
         <Input
-          onChange={this.handleChange}
           initialValue={this.state.currentAnswer}
+          onChange={this.handleChange}
+          onBlur={() =>
+            this.state.isValid &&
+            this.props.onBlur(this.props.question.id, this.state.currentAnswer)
+          }
         />
         {this.getInvalidExplanations()}
       </div>

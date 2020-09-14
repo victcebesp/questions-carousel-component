@@ -22,17 +22,14 @@ class DropDownQuestion extends Component {
 
   render() {
     return (
-      <div
-        className="question"
-        tabIndex="0"
-        onBlur={() =>
-          this.state.isValid &&
-          this.props.onBlur(this.props.question.id, this.state.currentAnswer)
-        }
-      >
+      <div className="question">
         <QuestionLabel text={this.props.question.questionLabel} />
         <DropDownInput
           onChange={this.handleChange}
+          onBlur={() =>
+            this.state.isValid &&
+            this.props.onBlur(this.props.question.id, this.state.currentAnswer)
+          }
           options={this.props.question.dropDownOptions}
           initialValue={this.state.currentAnswer}
         />
