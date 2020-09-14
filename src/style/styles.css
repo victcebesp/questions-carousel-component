@@ -29,6 +29,10 @@ img {
   border-radius: 0;
 }
 
+.form-control::placeholder {
+  color: white;
+}
+
 .form-control:focus {
   background: rgb(27, 27, 28);
   color: white;
