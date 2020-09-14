@@ -2,6 +2,7 @@ import DefaultValidation from "../validations/defaultValidation"
 
 export default class DropDownValidationManager {
   constructor(validationSpecifications) {
+    if (!validationSpecifications) validationSpecifications = []
     this.validations = validationSpecifications.map((s) => this.toValidation(s))
   }
 

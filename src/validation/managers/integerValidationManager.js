@@ -5,6 +5,7 @@ import DefaultValidation from "../validations/defaultValidation"
 
 export default class IntegerValidationManager {
   constructor(validationSpecifications) {
+    if (!validationSpecifications) validationSpecifications = []
     this.validations = [new NumericValidation(), new IntegerValidation()]
     this.validations.push(
       ...validationSpecifications.map((s) => this.toValidation(s))

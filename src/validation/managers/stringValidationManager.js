@@ -5,6 +5,7 @@ import DefaultValidation from "../validations/defaultValidation"
 
 export default class StringValidationManager {
   constructor(validationSpecifications) {
+    if (!validationSpecifications) validationSpecifications = []
     this.validations = [new AlphabeticValidation(), new EmptyValidation()]
     this.validations.push(
       ...validationSpecifications.map((s) => this.toValidation(s))
