@@ -13,7 +13,7 @@ class IntegerQuestion extends Component {
 
     this.state = {
       explanations: [],
-      isValid: this.validationManager.validate(this.props.initialValue),
+      isValid: this.validationManager.validate(this.props.initialValue).isValid,
       currentAnswer: this.props.initialValue,
     }
   }
