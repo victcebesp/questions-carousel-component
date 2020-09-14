@@ -1,5 +1,7 @@
+import NegativeLengthException from "../exceptions/negativeLengthException"
 export default class LengthValidation {
   constructor(maximumLength) {
+    if (maximumLength < 0) throw new NegativeLengthException()
     this.maximumLength = maximumLength
   }
 
