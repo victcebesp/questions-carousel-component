@@ -29,6 +29,7 @@ class IntegerQuestion extends Component {
             this.state.isValid &&
             this.props.onBlur(this.props.question.id, this.state.currentAnswer)
           }
+          onClick={this.handleClick}
         />
         {this.getInvalidExplanations()}
       </div>
@@ -40,6 +41,13 @@ class IntegerQuestion extends Component {
       currentAnswer
     )
     this.setState({ isValid, explanations, currentAnswer })
+  }
+
+  handleClick = () => {
+    const { isValid, explanations } = this.validationManager.validate(
+      this.state.currentAnswer
+    )
+    this.setState({ isValid, explanations })
   }
 
   getInvalidExplanations = () => {

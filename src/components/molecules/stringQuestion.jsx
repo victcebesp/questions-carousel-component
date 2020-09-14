@@ -24,10 +24,14 @@ class StringQuestion extends Component {
         <Input
           initialValue={this.state.currentAnswer}
           onChange={this.handleChange}
-          onBlur={() =>
+          onClick={this.handleClick}
+          onBlur={() => {
             this.state.isValid &&
-            this.props.onBlur(this.props.question.id, this.state.currentAnswer)
-          }
+              this.props.onBlur(
+                this.props.question.id,
+                this.state.currentAnswer
+              )
+          }}
         />
         {this.getInvalidExplanations()}
       </div>
@@ -39,6 +43,13 @@ class StringQuestion extends Component {
       currentAnswer
     )
     this.setState({ isValid, explanations, currentAnswer })
+  }
+
+  handleClick = () => {
+    const { isValid, explanations } = this.validationManager.validate(
+      this.state.currentAnswer
+    )
+    this.setState({ isValid, explanations })
   }
 
   getInvalidExplanations = () => {

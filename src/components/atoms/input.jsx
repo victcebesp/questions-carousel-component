@@ -10,6 +10,7 @@ class Input extends Component {
         onChange={(event) => this.props.onChange(event.target.value)}
         placeholder="Type your answer here..."
         onBlur={this.props.onBlur}
+        onClick={this.props.onClick}
       />
     )
   }
