@@ -3,16 +3,14 @@ import React, { Component } from "react"
 class DropDownInput extends Component {
   render() {
     return (
-      <div>
-        <select
-          onChange={(event) => this.props.onChange(event.target.value)}
-          defaultValue={this.getDefaultValue()}
-        >
-          {this.getOptions()}
-        </select>
-      </div>
+      <select
         autoFocus
         className="custom-select"
+        onChange={(event) => this.props.onChange(event.target.value)}
+        defaultValue={this.getDefaultValue()}
+      >
+        {this.getOptions()}
+      </select>
     )
   }
 
