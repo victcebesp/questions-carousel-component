@@ -1,5 +1,4 @@
 import React from "react"
-import logo from "./logo.svg"
 import "./App.css"
 import "./style/styles.css"
 import QuestionsCarousel from "./components/organisms/questionsCarousel"
