@@ -29,6 +29,17 @@ img {
   border-radius: 0;
 }
 
+.form-control {
+  border-bottom: 2px solid white;
+  background: rgb(27, 27, 28);
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  outline: none;
+}
+
 .form-control::placeholder {
   color: white;
 }
@@ -41,21 +52,15 @@ img {
   border-left: none;
   border-right: none;
   border-radius: 0;
+  outline: none;
 }
 
-.form-control:after {
-  content: "\f078";
-  color: white;
+.question {
+  padding: 50px;
+  border-radius: 25px;
 }
 
-.form-control {
-  border-bottom: 2px solid white;
-  background: rgb(27, 27, 28);
-  color: white;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
+.question:focus {
   outline: none;
 }
 
@@ -71,15 +76,6 @@ img {
   margin: 0 auto;
   margin-top: 100px;
   width: 50%;
-}
-
-.question {
-  padding: 50px;
-  border-radius: 25px;
-}
-
-.question:focus {
-  outline: none;
 }
 
 #header {
