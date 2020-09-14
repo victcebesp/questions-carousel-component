@@ -11,6 +11,7 @@ class DropDownInput extends Component {
           {this.getOptions()}
         </select>
       </div>
+        autoFocus
     )
   }
 

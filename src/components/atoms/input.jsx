@@ -4,6 +4,7 @@ class Input extends Component {
   render() {
     return (
       <input
+        autoFocus
         id="input"
         onChange={(event) => this.props.onChange(event.target.value)}
         placeholder="Type your answer here..."
