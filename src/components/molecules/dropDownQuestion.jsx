@@ -36,6 +36,7 @@ class DropDownQuestion extends Component {
           options={this.props.question.dropDownOptions}
           initialValue={this.state.currentAnswer}
         />
+        {this.getInvalidExplanations()}
       </div>
     )
   }
