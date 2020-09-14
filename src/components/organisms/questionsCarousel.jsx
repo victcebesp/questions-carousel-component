@@ -8,6 +8,7 @@ class QuestionsCarousel extends Component {
   state = {
     currentQuestionId: 0,
     answers: [],
+    finished: false,
   }
 
   render() {
@@ -15,10 +16,23 @@ class QuestionsCarousel extends Component {
   }
 
   getComponentToShow = () => {
-    if (
+    if (this.state.finished)
+      return (
+        <div className="alert alert-success text-center" role="alert">
+          All questions have been successfully answered!
+        </div>
+      )
+    else if (
       this.state.currentQuestionId === this.props.questionsConfigurations.length
     )
-      return <button className="btn btn-success btn-lg">Done!</button>
+      return (
+        <button
+          onClick={this.handleDoneButtonClick}
+          className="btn btn-success btn-lg"
+        >
+          Done!
+        </button>
+      )
     else return this.getCurrentQuestion()
   }
 
@@ -31,7 +45,7 @@ class QuestionsCarousel extends Component {
     )
     const initialValue = userDataForCurrentQuestion
       ? userDataForCurrentQuestion.answer
-      : null
+      : ""
 
     return this.toQuestionComponent(currentQuestion, initialValue)
   }
@@ -111,6 +125,11 @@ class QuestionsCarousel extends Component {
       if (condition.answer !== answerForContition.answer) return false
     }
     return true
+  }
+
+  handleDoneButtonClick = () => {
+    this.setState({ finished: true })
+    console.log(this.state.answers)
   }
 }
 
