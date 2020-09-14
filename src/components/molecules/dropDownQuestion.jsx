@@ -23,6 +23,7 @@ class DropDownQuestion extends Component {
   render() {
     return (
       <div
+        className="question"
         tabIndex="0"
         onBlur={() =>
           this.state.isValid &&
@@ -48,7 +49,9 @@ class DropDownQuestion extends Component {
 
   getInvalidExplanations = () => {
     return this.state.explanations.map((explanation, index) => (
-      <p key={index}>{explanation}</p>
+      <div key={index} className="alert alert-danger" role="alert">
+        {explanation}
+      </div>
     ))
   }
 }

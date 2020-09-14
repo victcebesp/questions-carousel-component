@@ -12,6 +12,7 @@ class DropDownInput extends Component {
         </select>
       </div>
         autoFocus
+        className="custom-select"
     )
   }
 

@@ -1,0 +1,86 @@
+body {
+  background: rgb(27, 27, 28);
+  color: white;
+  font-family: "Pacifico", cursive;
+}
+
+h1 {
+  text-align: center;
+  display: inline;
+  margin-left: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+img {
+  width: 200px;
+  height: 50px;
+}
+
+.custom-select {
+  background: rgb(27, 27, 28);
+  color: white;
+  border-top: none;
+  border-bottom: 2px solid white;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  background: rgb(27, 27, 28);
+  color: white;
+  border-top: none;
+  border-bottom: 2px solid white;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.form-control:after {
+  content: "\f078";
+  color: white;
+}
+
+.form-control {
+  border-bottom: 2px solid white;
+  background: rgb(27, 27, 28);
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  outline: none;
+}
+
+#question-carousel {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#question-carousel button {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 50%;
+}
+
+.question {
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.question:focus {
+  outline: none;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 80px;
+}

@@ -11,7 +11,7 @@ class QuestionsCarousel extends Component {
   }
 
   render() {
-    return <div>{this.getComponentToShow()}</div>
+    return <div id="question-carousel">{this.getComponentToShow()}</div>
   }
 
   getComponentToShow = () => {

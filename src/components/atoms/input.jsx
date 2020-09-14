@@ -5,6 +5,7 @@ class Input extends Component {
     return (
       <input
         autoFocus
+        className="form-control"
         id="input"
         onChange={(event) => this.props.onChange(event.target.value)}
         placeholder="Type your answer here..."
