@@ -18,7 +18,11 @@ class QuestionsCarousel extends Component {
   getComponentToShow = () => {
     if (this.state.finished)
       return (
-        <div className="alert alert-success text-center" role="alert">
+        <div
+          id="success-alert"
+          className="alert alert-success text-center"
+          role="alert"
+        >
           All questions have been successfully answered!
         </div>
       )
