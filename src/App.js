@@ -9,12 +9,16 @@ function App() {
   return (
     <main className="container">
       <div id="header">
-        <img
-          src={require("./assets/images/multiplyLogo.png")}
-          alt="Multiply logo"
-        />
-        <h1>coding test</h1>
+        <h1>Configurable form</h1>
       </div>
+      <p>
+        This form has been generated automatically based on a configuration
+        file.
+      </p>
+      <p>
+        It allows to automatically create questions and validations for those
+        questions based on a configuration file.
+      </p>
       <QuestionsCarousel
         questionsConfigurations={questionsConfigurations}
         userData={userData}
